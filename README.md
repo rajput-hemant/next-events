@@ -6,13 +6,13 @@
 
 # Great Quotes
 
-<!-- ### **[<kbd> <br> &nbsp; **Click to Visit WebPage** &nbsp; <br> </kbd>][site]**
+<!-- ### **[<kbd> <br> &nbsp; **Click to Visit WebPage** &nbsp; <br> </kbd>][site]** -->
 
-## Directory Structure
+<!-- ## Directory Structure -->
 
 </div>
 
-```
+<!-- ```
 
 ``` -->
 
@@ -38,7 +38,7 @@ rajput-hemant@arch:~/next-events$ npm run dev
 
 <div align = center>
 
-#### Course: [Udemy: React - The Complete Guide (incl Hooks, React Router, Redux)][course]
+#### Course: [Next.js & React - The Complete Guide (incl. Two Paths!)][course]
 
 #### Instructor: [Academind][academind] by [Maximilian Schwarzmüller][max]
 
@@ -65,6 +65,6 @@ _Note: It may take up to 24h for the [contrib.rocks][contrib-rocks] plugin to up
 <!-----------------------------------{ Links }---------------------------------->
 
 [site]: https://rajput-hemant.github.io/next-events/
-[course]: https://www.udemy.com/course/react-the-complete-guide-incl-redux/
+[course]: https://www.udemy.com/course/nextjs-react-the-complete-guide/
 [academind]: https://www.udemy.com/user/academind/
 [max]: https://www.udemy.com/user/maximilian-schwarzmuller/
