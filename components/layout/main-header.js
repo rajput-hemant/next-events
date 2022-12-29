@@ -15,7 +15,7 @@ const MainHeader = () => {
 				<ul>
 					<li>
 						<Link
-							href="events"
+							href="/events"
 							className="no-underline text-[#74dacc] text-base md:text-2xl"
 						>
 							Browse All Events
