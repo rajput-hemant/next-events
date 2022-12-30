@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import DateIcon from "../icons/date-icon";
 import LogisticsItem from "./logistics-item";
 import AddressIcon from "../icons/address-icon";
@@ -15,9 +17,11 @@ function EventLogistics({ date, address, image, imageAlt }) {
 		<section className="flex flex-col items-center gap-4 justify-center -my-12 mx-auto w-4/5 max-w-3xl p-2 bg-[#2b2b2b] rounded-md shadow-md md:p-8 md:-my-20 md:mx-auto md:gap-12 md:flex-row md:items-stretch">
 			{/* image */}
 			<div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white md:w-80 md:h-80">
-				<img
+				<Image
 					src={`/${image}`}
 					alt={imageAlt}
+					width={300}
+					height={300}
 					className="w-40 h-40 object-cover md:h-80 md:w-80"
 				/>
 			</div>

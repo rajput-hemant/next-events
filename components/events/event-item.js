@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import Button from "../ui/button";
 import DateIcon from "../icons/date-icon";
 import AddressIcon from "../icons/address-icon";
@@ -17,9 +19,11 @@ const EventItem = ({ title, image, date, location, id }) => {
 	return (
 		// item
 		<li className="bg-white m-4 flex flex-col gap-4 rounded-lg overflow-hidden shadow-lg md:flex-row">
-			<img
+			<Image
 				src={"/" + image}
 				alt={title}
+				width={300}
+				height={300}
 				className="w-full object-cover md:w-2/5 md:h-56"
 			/>
 			{/* content */}

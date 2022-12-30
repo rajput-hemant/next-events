@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import Button from "../../components/ui/button";
 import { getFilteredEvents } from "../../helpers/api-util";
 import ErrorAlert from "../../components/ui/error-alert";
@@ -37,6 +39,13 @@ const FilteredEvents = ({ date, events, hasError }) => {
 
 	return (
 		<>
+			<Head>
+				<title>Filtered Events</title>
+				<meta
+					name="description"
+					content={`All events for ${date.month}/${date.year}`}
+				/>
+			</Head>
 			<ResultsTitle date={featuredEventDate} />
 			<EventList items={filteredEvents} />
 		</>
