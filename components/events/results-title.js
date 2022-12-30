@@ -8,7 +8,7 @@ const ResultsTitle = ({ date }) => {
 
 	return (
 		<section className="mx-auto my-8 w-[90%] text-center">
-			<h1>Events in {formattedDate}</h1>
+			<h1 className="font-bold text-2xl">Events in {formattedDate}</h1>
 			<Button link="/events">Show all events</Button>
 		</section>
 	);

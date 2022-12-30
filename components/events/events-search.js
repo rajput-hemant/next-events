@@ -63,13 +63,15 @@ const EventsSearch = ({ onSearch }) => {
 						id="month"
 						className="bg-white border border-black rounded-md w-[70%] p-1 md:w-full"
 					>
-						{months.map((month) => (
-							<option value={month.value}>{month.label}</option>
+						{months.map((month, index) => (
+							<option key={index} value={month.value}>
+								{month.label}
+							</option>
 						))}
 					</select>
 				</div>
 			</div>
-			<Button onClick={() => {}}>Find Events</Button>
+			<Button>Find Events</Button>
 		</form>
 	);
 };
