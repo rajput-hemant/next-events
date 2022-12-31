@@ -15,7 +15,7 @@ const Comments = ({ eventId }) => {
 					setComments(data.comments);
 				});
 		}
-	}, [showComments]);
+	}, [showComments, eventId]);
 
 	const toggleCommentsHandler = () => {
 		setShowComments((prevStatus) => !prevStatus);
@@ -33,9 +33,11 @@ const Comments = ({ eventId }) => {
 			.then((data) => console.log(data));
 	};
 
+	console.log(comments);
+
 	return (
 		// comments
-		<section className="mx-auto my-12 max-w-2xl">
+		<section className="mx-auto my-12 max-w-2xl text-center">
 			<button
 				onClick={toggleCommentsHandler}
 				className="rounded-md font-bold py-2 px-4 bg-transparent text-[#03be9f] border border-[#03be9f] cursor-pointer hover:bg-[#03be9f] hover:text-white active:translate-y-0.5 active:duration-75"
