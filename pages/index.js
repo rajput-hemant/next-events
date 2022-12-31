@@ -1,9 +1,11 @@
 import EventList from "../components/events/event-list";
 import { getFeaturedEvents } from "../helpers/api-util";
+import NewsletterRegistration from "../components/input/newsletter-registration";
 
 const Home = ({ featuredEvents }) => {
 	return (
 		<>
+			<NewsletterRegistration />
 			<EventList items={featuredEvents} />
 		</>
 	);
