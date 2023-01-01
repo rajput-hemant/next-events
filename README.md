@@ -2,19 +2,97 @@
 
 ![][views] ![][stars] ![][forks] ![][issues] ![][license] ![][repo-size]
 
-<!-- ![](./assets/images/logo.png) -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/images/nextjs-light.svg">
+  <source media="(prefers-color-scheme: light)" srcset="public/images/nextjs-dark.svg">
+  <img alt="next-events">
+</picture>
 
-# Great Quotes
+# Next Events
 
-<!-- ### **[<kbd> <br> &nbsp; **Click to Visit WebPage** &nbsp; <br> </kbd>][site]** -->
-
-<!-- ## Directory Structure -->
+## Directory Structure
 
 </div>
 
-<!-- ```
+<details >
+  <summary align=center>
+  
+  #### Click to Expand
+  </Summary>
 
-``` -->
+```
+src
+|
+|-- components
+|   |
+|   |-- event-detail
+|   |   |-- event-content.js
+|   |   |-- event-logistics.js
+|   |   |-- event-summary.js
+|   |   `-- logistics-item.js
+|   |
+|   |-- events
+|   |   |-- event-item.js
+|   |   |-- event-list.js
+|   |   |-- events-search.js
+|   |   `-- results-title.js
+|   |
+|   |-- icons
+|   |   |-- address-icon.js
+|   |   |-- arrow-right-icon.js
+|   |   `-- date-icon.js
+|   |
+|   |-- input
+|   |   |-- comment-list.js
+|   |   |-- comments.js
+|   |   |-- new-comment.js
+|   |   `-- newsletter-registration.js
+|   |
+|   |-- layout
+|   |   |-- layout.js
+|   |   `-- main-header.js
+|   |
+|   `-- ui
+|       |-- button.js
+|       |-- error-alert.js
+|       `-- notification.js
+|
+|-- helpers
+|   |-- api-util.js
+|   `-- db-utils.js
+|
+|-- pages
+|   |-- api
+|   |   |-- comments
+|   |   |   `-- [eventId].js
+|   |   `-- newsletter.js
+|   |
+|   |-- events
+|   |   |-- [...slug].js
+|   |   |-- [eventId].js
+|   |   `-- index.js
+|   |
+|   |-- _app.js
+|   |-- _document.js
+|   `-- index.js
+|
+|-- public
+|   |-- images
+|   |   |-- coding-event.jpg
+|   |   |-- extrovert-event.jpg
+|   |   |-- introvert-event.jpg
+|   |   `-- logo.png
+|   |-- favicon.ico
+|   `-- vercel.svg
+|
+|-- store
+|   `-- notification-context.js
+|
+`-- styles
+    `-- globals.css
+```
+
+</details>
 
 <div align = center>
 
@@ -64,7 +142,6 @@ _Note: It may take up to 24h for the [contrib.rocks][contrib-rocks] plugin to up
 
 <!-----------------------------------{ Links }---------------------------------->
 
-[site]: https://rajput-hemant.github.io/next-events/
 [course]: https://www.udemy.com/course/nextjs-react-the-complete-guide/
 [academind]: https://www.udemy.com/user/academind/
 [max]: https://www.udemy.com/user/maximilian-schwarzmuller/
