@@ -39,7 +39,7 @@ const handler = async (req, res) => {
 
 		let result;
 		try {
-			result = await insertDocument(client, "comments", { email: email });
+			result = await insertDocument(client, "comments", newComment);
 			newComment._id = result.insertedId;
 			res.status(201).json({ message: "Comment Added.", comment: newComment });
 		} catch (error) {

@@ -1,18 +1,24 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import NewComment from "./new-comment";
 import CommentList from "./comment-list";
+import NotificationContext from "../../store/notification-context";
 
 const Comments = ({ eventId }) => {
-	const [showComments, setShowComments] = useState(false);
 	const [comments, setComments] = useState([]);
+	const [showComments, setShowComments] = useState(false);
+	const [isFetchingComments, setIsFetchingComments] = useState(false);
+
+	const notifCtx = useContext(NotificationContext);
 
 	useEffect(() => {
 		if (showComments) {
+			setIsFetchingComments(true);
 			fetch("/api/comments/" + eventId)
 				.then((response) => response.json())
 				.then((data) => {
 					setComments(data.comments);
+					setIsFetchingComments(false);
 				});
 		}
 	}, [showComments, eventId]);
@@ -22,6 +28,12 @@ const Comments = ({ eventId }) => {
 	};
 
 	const addCommentHandler = (commentData) => {
+		notifCtx.showNotification({
+			title: "Sending comment...",
+			message: "Your comment is currently being stored into a database.",
+			status: "pending",
+		});
+
 		fetch("/api/comments/" + eventId, {
 			method: "POST",
 			body: JSON.stringify(commentData),
@@ -29,11 +41,28 @@ const Comments = ({ eventId }) => {
 				"Content-Type": "application/json",
 			},
 		})
-			.then((response) => response.json())
-			.then((data) => console.log(data));
-	};
+			.then((response) => {
+				if (response.ok) return response.body;
 
-	console.log(comments);
+				return response.json().then((data) => {
+					throw new Error(data.message || "Something went wrong!");
+				});
+			})
+			.then(() =>
+				notifCtx.showNotification({
+					title: "Success!",
+					message: "Your comment was saved!",
+					status: "success",
+				})
+			)
+			.catch((error) =>
+				notifCtx.showNotification({
+					title: "Error!",
+					message: error.message || "Something went wrong!",
+					status: "error",
+				})
+			);
+	};
 
 	return (
 		// comments
@@ -45,7 +74,10 @@ const Comments = ({ eventId }) => {
 				{showComments ? "Hide" : "Show"} Comments
 			</button>
 			{showComments && <NewComment onAddComment={addCommentHandler} />}
-			{showComments && <CommentList items={comments} />}
+			{showComments && !isFetchingComments && <CommentList items={comments} />}
+			{showComments && isFetchingComments && (
+				<p className="font-bold text-xl text-[#03be9f]">Loading...</p>
+			)}
 		</section>
 	);
 };
